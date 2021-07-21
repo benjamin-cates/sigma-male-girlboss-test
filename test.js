@@ -10,15 +10,15 @@ const questions = [
     {question: "Are you competitive?", power: -0.9, axis: axis_gender},
     {question: "Do you identify as a woman?", power: 1, axis: axis_gender},
     {question: "Do you avoid cursing?", power: 1, axis: axis_chad},
-    {question: "Amogus?",power:-0.5,axis:axis_chad},
-    {question: "Boys or girls?",power:0,axis:axis_chad},
-    {question: "Are you attracted to Chris Hemsworth?",power:2,axis:axis_chad},
-    {question: "Homophobia?",power:-1,axis:axis_chad},
-    {question: "Amogus?",power:0.5,axis:axis_chad},
-    {question: "Amogus?",power:-0.5,axis:axis_chad},
-    {question: "Amogus?",power:0.5,axis:axis_chad},
-    {question: "Do you mald?", power:0.6, axis:axis_gender},
-    {question: "Chad or soy?", power:-1, axis:axis_chad},
+    {question: "Amogus?", power: -0.5, axis: axis_chad},
+    {question: "Boys or girls?", power: 0, axis: axis_chad},
+    {question: "Are you attracted to Chris Hemsworth?", power: 2, axis: axis_chad},
+    {question: "Homophobia?", power: -1, axis: axis_chad},
+    {question: "Amogus?", power: 0.5, axis: axis_chad},
+    {question: "Amogus?", power: -0.5, axis: axis_chad},
+    {question: "Amogus?", power: 0.5, axis: axis_chad},
+    {question: "Do you mald?", power: 0.6, axis: axis_gender},
+    {question: "Chad or soy?", power: -1, axis: axis_chad},
 ];
 var results = [];
 var id = -1;
@@ -26,7 +26,7 @@ function nextQuestion(strength) {
     results[id] = strength;
     id++;
     if(id == questions.length) return computeResults();
-    document.getElementById("question").innerHTML = questions[id].question + " (" + (id+1) + "/" + questions.length + ")";
+    document.getElementById("question").innerHTML = questions[id].question + " (" + (id + 1) + "/" + questions.length + ")";
 }
 function computeResults() {
     let chadness = 0;
@@ -39,8 +39,8 @@ function computeResults() {
         if(questions[i].axis == axis_chad) chadness += questions[i].power * results[i];
         if(questions[i].axis == axis_gender) femaleness += questions[i].power * results[i];
     }
-    chadness/=maximumchad;
-    femaleness/=maximumfemale;
+    chadness /= maximumchad;
+    femaleness /= maximumfemale;
     let quadrant;
     if(chadness > 0 && femaleness <= 0) quadrant = "Sigma male";
     else if(chadness > 0 && femaleness == 0) quadrant = "Enby chad";
@@ -50,10 +50,14 @@ function computeResults() {
     else if(chadness < 0 && femaleness < 0) quadrant = "Soy boy";
     else if(chadness < 0 && femaleness == 0) quadrant = "Enby soy";
     else if(chadness < 0 && femaleness > 0) quadrant = "E-girl";
-    chadness=Math.round(chadness*100)/100;
-    femaleness=Math.round(femaleness*100)/100;
-    document.getElementById("stats").innerHTML = "Chad: " + chadness + "<br>Female: " + femaleness + "<br>Quadrant: " + quadrant;
-    document.getElementsByTagName("svg")[0].innerHTML += "<circle r=\"14\" fill=\"red\" cx=\"" + (femaleness * 180 + 250) + "\" cy=\"" + ((chadness*-1) * 180 + 250) + "\"/>"
+    chadness = Math.round(chadness * 100) / 100;
+    femaleness = Math.round(femaleness * 100) / 100;
+    document.getElementById("stats").innerHTML =
+        (chadness < 0 ? "Soy: " : "Chad: ") + Math.abs(chadness * 100) + "%" +
+        "<br>" +
+        (femaleness > 0 ? "Female: " : "Male: ") + Math.abs(femaleness * 100) + "%" +
+        "<br>Quadrant: " + quadrant;
+    document.getElementsByTagName("svg")[0].innerHTML += "<circle r=\"14\" fill=\"red\" cx=\"" + (femaleness * 180 + 250) + "\" cy=\"" + ((chadness * -1) * 180 + 250) + "\"/>"
     document.getElementById("results").style.display = "block";
     document.getElementById("quiz").style.display = "none";
 }
