@@ -46,6 +46,7 @@ function computeResults() {
     else if(chadness > 0 && femaleness == 0) quadrant = "Enby chad";
     else if(chadness > 0 && femaleness > 0) quadrant = "Girlboss";
     else if(chadness == 0 && femaleness < 0) quadrant = "Male";
+    else if(chadness == 0 && femaleness == 0) quadrant = "Centrist :chad:";
     else if(chadness == 0 && femaleness > 0) quadrant = "Female";
     else if(chadness < 0 && femaleness < 0) quadrant = "Soy boy";
     else if(chadness < 0 && femaleness == 0) quadrant = "Enby soy";
