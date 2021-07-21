@@ -6,10 +6,16 @@ const questions = [
     {question: "Do you like gangsta's paradise?", power: 0.5, axis: axis_chad},
     {question: "Linux?", power: 0.6, axis: axis_chad},
     {question: "Do you have green eyes?", power: -0.5, axis: axis_chad},
-    {question: "Are you sincere?", power: 0.6, axis: axis_chad},
-    {question: "Are you competitive?", power: -0.9, axis: axis_chad},
+    {question: "Are you sincere?", power: 0.6, axis: axis_gender},
+    {question: "Are you competitive?", power: -0.9, axis: axis_gender},
     {question: "Do you identify as a woman?", power: 1, axis: axis_gender},
     {question: "Do you avoid cursing?", power: 1, axis: axis_chad},
+    {question: "Amogus?",power:-1,axis:axis_chad},
+    {question: "Boys or girls?",power:0,axis:axis_chad},
+    {question: "Are you attracted to Chris Hemsworth?",power:2,axis:axis_chad},
+    {question: "Homophobia?",power:-1,axis:axis_chad},
+    {question: "Amogus?",power:-1,axis:axis_chad},
+    {question: "Amogus?",power:-1,axis:axis_chad},
 ];
 var results = [];
 var id = -1;
