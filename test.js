@@ -44,9 +44,13 @@ function computeResults() {
     let quadrant;
     if(Math.abs(chadness) < 0.25 && Math.abs(femaleness) < 0.25) quadrant = "Centrist";
     else if(chadness > 0 && femaleness <= 0) quadrant = "Sigma male";
+    else if(chadness > 0 && femaleness == 0) quadrant = "Enby chad";
     else if(chadness > 0 && femaleness > 0) quadrant = "Girlboss";
-    else if(chadness <= 0 && femaleness <= 0) quadrant = "Soy boy";
-    else if(chadness <= 0 && femaleness > 0) quadrant = "E-girl";
+    else if(chadness == 0 && femaleness < 0) quadrant = "Male";
+    else if(chadness == 0 && femaleness > 0) quadrant = "Female";
+    else if(chadness < 0 && femaleness < 0) quadrant = "Soy boy";
+    else if(chadness < 0 && femaleness == 0) quadrant = "Enby soy";
+    else if(chadness < 0 && femaleness > 0) quadrant = "E-girl";
     document.getElementById("stats").innerHTML = "Chad: " + chadness + "<br>Female: " + femaleness + "<br>Quadrant: " + quadrant;
     document.getElementsByTagName("svg")[0].innerHTML += "<circle r=\"14\" fill=\"red\" cx=\"" + (femaleness * 180 + 250) + "\" cy=\"" + ((chadness*-1) * 180 + 250) + "\"/>"
     document.getElementById("results").style.display = "block";
