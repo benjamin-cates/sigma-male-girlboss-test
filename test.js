@@ -17,7 +17,7 @@ function nextQuestion(strength) {
     results[id] = strength;
     id++;
     if(id == questions.length) return computeResults();
-    document.getElementById("question").innerHTML = questions[id].question + " (" + id + "/" + questions.length + ")";
+    document.getElementById("question").innerHTML = questions[id].question + " (" + (id+1) + "/" + questions.length + ")";
 }
 function computeResults() {
     let chadness = 0;
