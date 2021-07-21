@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="test.js"></script>
+        <title>Chad Soy Test</title>
+    </head>
+    <body>
+        <div id="quiz">
+            <div id="question"></div>
+            <button onclick="nextQuestion(1)">Yes</button>
+            <button onclick="nextQuestion(0.5)">Kinda</button>
+            <button onclick="nextQuestion(0)">Neutral</button>
+            <button onclick="nextQuestion(-0.5)">Not Really</button>
+            <button onclick="nextQuestion(-1)">No</button>
+        </div>
+        <div id="results" style="display:none">
+            <svg width="500" height="500">
+            <image href="compass.png" x="0" y="0" width="500" height="500"/>
+            </svg>
+            <div id="stats"></div>
+
+        </div>
+    </body>
+    <script>
+        nextQuestion(0);
+    </script>
+</html>
