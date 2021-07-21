@@ -1,0 +1,21 @@
+button {
+    font-size:1.3em;
+    border:0;
+    background:#EEE;
+    margin-left:3px;
+    border-radius:2px;
+    padding:4px 10px 4px 10px;
+}
+button:hover {
+    background: #DDD;
+}
+button:active {
+    background:#BBB;
+}
+html {
+    font-family: 'Roboto', sans-serif;
+}
+#question {
+    font-size:1.5em;
+    margin-bottom:15px;
+}
