@@ -50,14 +50,13 @@ function computeResults() {
     else if(chadness < 0 && femaleness < 0) quadrant = "Soy boy";
     else if(chadness < 0 && femaleness == 0) quadrant = "Enby soy";
     else if(chadness < 0 && femaleness > 0) quadrant = "E-girl";
-    chadness = Math.round(chadness * 100) / 100;
-    femaleness = Math.round(femaleness * 100) / 100;
     document.getElementById("stats").innerHTML =
-        (chadness < 0 ? "Soy: " : "Chad: ") + Math.abs(chadness * 100) + "%" +
+        (chadness < 0 ? "Soy: " : "Chad: ") + Math.round(Math.abs(chadness * 100)) + "%" +
         "<br>" +
-        (femaleness > 0 ? "Female: " : "Male: ") + Math.abs(femaleness * 100) + "%" +
+        (femaleness > 0 ? "Female: " : "Male: ") + Math.round(Math.abs(femaleness * 100)) + "%" +
         "<br>Quadrant: " + quadrant;
-    document.getElementsByTagName("svg")[0].innerHTML += "<circle r=\"14\" fill=\"red\" cx=\"" + (femaleness * 180 + 250) + "\" cy=\"" + ((chadness * -1) * 180 + 250) + "\"/>"
+    //Left: 59, Right: 430, Top: 65, Bottom: 436
+    document.getElementsByTagName("svg")[0].innerHTML += "<circle r=\"14\" fill=\"red\" cx=\"" + (femaleness * 185.5 + 244.5) + "\" cy=\"" + ((chadness * -1) * 185.5 + 250.2) + "\" stroke=\"black\" stroke-width=\"2\"/>"
     document.getElementById("results").style.display = "block";
     document.getElementById("quiz").style.display = "none";
 }
